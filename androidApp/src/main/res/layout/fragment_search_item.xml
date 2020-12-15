@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/thumbView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@android:drawable/ic_media_play" />
+
+            <TextView
+                android:id="@+id/titleLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/com_title"
+                app:layout_constraintBottom_toTopOf="@id/subtitleLabelView"
+                app:layout_constraintStart_toEndOf="@id/thumbView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:bufferType="spannable"
+                app:layout_constraintBottom_toBottomOf="@id/titleLabelView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+                app:layout_constraintTop_toTopOf="@id/titleLabelView"
+                tools:text="~~~ title ~~~" />
+
+            <TextView
+                android:id="@+id/subtitleLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/com_subtitle"
+                android:bufferType="spannable"
+                app:layout_constraintBottom_toTopOf="@id/publishedAtLabelView"
+                app:layout_constraintStart_toStartOf="@id/titleLabelView"
+                app:layout_constraintTop_toBottomOf="@id/titleLabelView"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/subtitleView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@id/subtitleLabelView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+                app:layout_constraintTop_toTopOf="@id/subtitleLabelView"
+                tools:text="~~~ subtitle ~~~" />
+
+            <TextView
+                android:id="@+id/publishedAtLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/com_published_at"
+                app:layout_constraintBottom_toTopOf="@id/directorLabelView"
+                app:layout_constraintStart_toStartOf="@id/titleLabelView"
+                app:layout_constraintTop_toBottomOf="@id/subtitleLabelView"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/publishedAtView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@id/publishedAtLabelView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+                app:layout_constraintTop_toTopOf="@id/publishedAtLabelView"
+                tools:text="~~~ published at ~~~" />
+
+            <TextView
+                android:id="@+id/directorLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/com_director"
+                app:layout_constraintBottom_toTopOf="@id/actorsLabelView"
+                app:layout_constraintStart_toStartOf="@id/titleLabelView"
+                app:layout_constraintTop_toBottomOf="@id/publishedAtLabelView"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/directorView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@id/directorLabelView"
+                app:layout_constraintEnd_toStartOf="@id/scrap_button"
+                app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+                app:layout_constraintTop_toTopOf="@id/directorLabelView"
+                tools:text="~~~ director ~~~" />
+
+            <TextView
+                android:id="@+id/actorsLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/com_actors"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/titleLabelView"
+                app:layout_constraintTop_toBottomOf="@id/directorLabelView"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/actorsView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@id/actorsLabelView"
+                app:layout_constraintEnd_toStartOf="@id/scrap_button"
+                app:layout_constraintStart_toEndOf="@id/labelBarrierView"
+                app:layout_constraintTop_toTopOf="@id/actorsLabelView"
+                tools:text="~~~ actors ~~~" />
+
+            <ImageView
+                android:id="@+id/scrap_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/download_button_selector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/directorView"
+                app:layout_constraintTop_toTopOf="@id/directorView"
+                tools:src="@drawable/ic_download" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/labelBarrierView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+
+                app:constraint_referenced_ids="titleLabelView,subtitleLabelView, publishedAtLabelView, directorLabelView, actorsLabelView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

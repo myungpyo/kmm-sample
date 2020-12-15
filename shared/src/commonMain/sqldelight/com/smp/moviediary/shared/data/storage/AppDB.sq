@@ -1,0 +1,54 @@
+CREATE TABLE MovieTable (
+id INTEGER NOT NULL PRIMARY KEY,
+title TEXT NOT NULL,
+subTitle TEXT,
+thumb TEXT,
+director TEXT,
+actor TEXT,
+publishedAt TEXT,
+rating REAL AS Float DEFAULT 0 NOT NULL,
+scrap INTEGER AS Boolean DEFAULT 0 NOT NULL,
+memo TEXT
+);
+
+insertMovie:
+INSERT INTO MovieTable (id, title, subTitle, thumb, director, actor, publishedAt, rating, scrap, memo)
+VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+updateMovie:
+UPDATE MovieTable
+SET title = ?, subTitle = ?, thumb = ?, director = ?, actor = ?, publishedAt = ?, rating = ?, scrap = ?, memo = ?
+WHERE id = ?;
+
+upsertMovie {
+  UPDATE MovieTable
+  SET title = :title, subTitle = :subTitle, thumb = :thumb, director = :director, actor = :actor, publishedAt = :publishedAt, rating = :rating, scrap = :scrap, memo = :memo
+  WHERE id = :id;
+
+  INSERT OR IGNORE INTO MovieTable (id, title, subTitle, thumb, director, actor, publishedAt, rating, scrap, memo)
+  VALUES(:id, :title, :subTitle, :thumb, :director, :actor, :publishedAt, :rating, :scrap, :memo);
+}
+
+updateScrap:
+UPDATE MovieTable
+SET scrap = ?
+WHERE id = ?;
+
+selectMovies:
+SELECT *
+FROM MovieTable
+WHERE id IN ?;
+
+selectScrapMovies:
+SELECT *
+FROM MovieTable
+WHERE scrap = 1;
+
+searchMovies:
+SELECT *
+FROM MovieTable
+WHERE LOWER(title) LIKE LOWER('%' || :keyword || '%')
+    OR LOWER(subTitle) LIKE LOWER('%' || :keyword || '%');
+
+removeAllMovies:
+DELETE FROM MovieTable;

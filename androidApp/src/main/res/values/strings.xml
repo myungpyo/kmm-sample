@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovieDiary</string>
+    <string name="com_search">Search</string>
+    <string name="com_title">Title</string>
+    <string name="com_subtitle">Subtitle</string>
+    <string name="com_director">Director</string>
+    <string name="com_actors">Actors</string>
+    <string name="com_published_at">Published at</string>
+    <string name="com_scrap">Scrap</string>
+
+    <string name="empty_scrap_tab_message">Scrap box is empty.\nLet\'s go scrap tab and get some movies.</string>
+    <string name="empty_search_tab_message">Enter some keywords to search.</string>
+</resources>

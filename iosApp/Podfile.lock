@@ -1,0 +1,20 @@
+PODS:
+  - Nuke (8.4.1)
+  - Swinject (2.7.1)
+
+DEPENDENCIES:
+  - Nuke
+  - Swinject (= 2.7.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nuke
+    - Swinject
+
+SPEC CHECKSUMS:
+  Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+
+PODFILE CHECKSUM: a2dd0ecb240a5e6180cb81ad51ad9198a7b6a396
+
+COCOAPODS: 1.10.0
